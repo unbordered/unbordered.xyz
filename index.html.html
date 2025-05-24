@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UNBORDERED — Freedom Token</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px red, -2px -2px blue; }
+            25% { text-shadow: -2px -2px red, 2px 2px blue; }
+            50% { text-shadow: 2px -2px red, -2px 2px blue; }
+            75% { text-shadow: -2px 2px red, 2px -2px blue; }
+            100% { text-shadow: 2px 2px red, -2px -2px blue; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.2em;
+            animation: glitch 1s infinite;
+        }
+
+        p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin-bottom: 2em;
+        }
+
+        a {
+            color: #00ffe0;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+            animation: pulse 3s infinite;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://i.postimg.cc/15Kkmxb2/unbordered-logo.png" alt="UNBORDERED Logo" class="logo">
+    <h1>UNBORDERED</h1>
+    <p>The freedom token for the ungoverned. No borders. No masters. No apologies.</p>
+    <div>
+        <a href="https://pump.fun/coin/DPa3gd52uibAGBee6grRAyJ1eXaZRY69AxzqszEepump" target="_blank">Pump.fun & Live Stream</a>
+        <a href="https://dexscreener.com/solana/2we7s32jgo3ykb84t6jwzx3ngktuzd3whkibwubi6hfa" target="_blank">Dexscreener</a>
+        <a href="https://x.com/unbordered" target="_blank">Twitter</a>
+        <a href="https://t.me/UNBDxyz" target="_blank">Telegram</a>
+    </div>
+</body>
+</html>
