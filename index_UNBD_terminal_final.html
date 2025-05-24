@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$UNBD — UNBORDERED Token</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(0,255,224,0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        body > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
+
+        section {
+            scroll-snap-align: center;
+            padding: 60px 0;
+        }
+    
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px red, -2px -2px blue; }
+            25% { text-shadow: -2px -2px red, 2px 2px blue; }
+            50% { text-shadow: 2px -2px red, -2px 2px blue; }
+            75% { text-shadow: -2px 2px red, 2px -2px blue; }
+            100% { text-shadow: 2px 2px red, -2px -2px blue; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.2em;
+            animation: glitch 1s infinite;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
+
+        .manifesto {
+            font-style: italic;
+            margin: 20px;
+            color: #aaa;
+            min-height: 40px;
+        }
+
+        a {
+            color: #00ffe0;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+            animation: pulse 3s infinite;
+        }
+
+        .cta-button {
+            background-color: #00ffe0;
+            color: #000;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 1em;
+            text-decoration: none;
+        }
+
+        .roadmap {
+            margin-top: 40px;
+        }
+
+        .roadmap h2 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .roadmap ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        .roadmap li {
+            margin: 5px 0;
+        }
+
+        .block-counter {
+            margin-top: 20px;
+            color: #00ffe0;
+        }
+
+        iframe {
+            border: none;
+            margin-top: 30px;
+            width: 360px;
+            height: 400px;
+        }
+    </style>
+    <script>
+        let block = 16239999;
+        function updateBlockCounter() {
+            document.getElementById('blockCounter').innerText = "Current Block: " + block++;
+        }
+
+        const quotes = [
+            "$UNBD is not a token. It’s an escape strategy.",
+            "Borders are artificial. Freedom isn’t.",
+            "You don’t join $UNBD. You exit with it.",
+            "In $UNBD we trust — not systems.",
+            "Move. Build. Vanish. Reappear. That’s freedom."
+        ];
+        let quoteIndex = 0;
+        function rotateQuotes() {
+            document.getElementById('quoteDisplay').innerText = quotes[quoteIndex];
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+        }
+
+        setInterval(updateBlockCounter, 2500);
+        setInterval(rotateQuotes, 4000);
+        window.onload = function() {
+            updateBlockCounter();
+            rotateQuotes();
+        };
+    </script>
+</head>
+<body>
+
+<div id="intro" style="color:#00ffe0; font-family:monospace; font-size:1.2em; text-align:left; width:80%; max-width:600px; margin-top:40px;">
+  <span id="typedText"></span><span class="cursor">█</span>
+</div>
+<script>
+  const introLines = [
+    "Initializing connection to $UNBD...",
+    "Loading sovereignty protocol...",
+    "Bypassing legacy finance...",
+    "Establishing memetic bridge...",
+    "Connected. Welcome to UNBORDERED."
+  ];
+  let lineIndex = 0, charIndex = 0, isTyping = true;
+  const textElement = document.getElementById("typedText");
+  const cursor = document.querySelector(".cursor");
+
+  function typeLine() {
+    if (lineIndex < introLines.length) {
+      const currentLine = introLines[lineIndex];
+      if (charIndex < currentLine.length) {
+        textElement.innerHTML += currentLine.charAt(charIndex++);
+        setTimeout(typeLine, 50);
+      } else {
+        textElement.innerHTML += "<br>";
+        charIndex = 0;
+        lineIndex++;
+        setTimeout(typeLine, 600);
+      }
+    } else {
+      cursor.style.display = "none";
+    }
+  }
+  window.onload = function() {
+    typeLine();
+    rotateQuotes();
+  };
+</script>
+
+    <img src="https://i.postimg.cc/15Kkmxb2/unbordered-logo.png" alt="UNBORDERED Logo" class="logo">
+    <h1>$UNBD — UNBORDERED</h1>
+    <div class="subtitle">✈️ No Borders. 🔓 No Masters. 🧠 Only Freedom.</div>
+    <div class="manifesto" id="quoteDisplay"></div>
+
+    
+
+    <a href="https://pump.fun/coin/DPa3gd52uibAGBee6grRAyJ1eXaZRY69AxzqszEepump" class="cta-button" target="_blank">BUY $UNBD NOW</a>
+
+    <div class="roadmap">
+        <h2>⚡ $UNBD Roadmap</h2>
+        <ul>
+            <li>✅ Launch on Pump.fun</li>
+            <li>✅ Website & Twitter live</li>
+            <li>🔄 Tokenlist integration</li>
+            <li>🚀 Phase 2: Expansion + Memetic Warfare</li>
+        </ul>
+    </div>
+
+    <iframe src="https://dexscreener.com/solana/2we7s32jgo3ykb84t6jwzx3ngktuzd3whkibwubi6hfa?embed=1&theme=dark&tabs=chart,txns"></iframe>
+
+    <div style="margin-top: 40px;">
+        <a href="https://pump.fun/coin/DPa3gd52uibAGBee6grRAyJ1eXaZRY69AxzqszEepump" target="_blank">Pump.fun & Live Stream</a>
+        <a href="https://dexscreener.com/solana/2we7s32jgo3ykb84t6jwzx3ngktuzd3whkibwubi6hfa" target="_blank">Dexscreener</a>
+        <a href="https://x.com/unbordered" target="_blank">Twitter</a>
+        <a href="https://t.me/UNBDxyz" target="_blank">Telegram</a>
+    </div>
+</body>
+</html>
