@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UNBD — Move Free</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background-color: #000;
+      color: #00ffea;
+      overflow-x: hidden;
+    }
+
+    .terminal {
+      background: #0d0d0d;
+      position: fixed;
+      z-index: 9999;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 30px;
+      font-size: 1.2em;
+      white-space: pre-line;
+    }
+
+    .blinker {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1 }
+      50% { opacity: 0 }
+      100% { opacity: 1 }
+    }
+
+    .fade-out {
+      animation: fadeOut 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    .content {
+      display: none;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(to bottom, #000000, #0f0f0f);
+      color: #f2f2f2;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 1.2em;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background: #00ffff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .buttons a:hover {
+      background: #ff00ff;
+      color: white;
+    }
+
+    .roadmap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .roadmap-item {
+      background: rgba(255, 255, 255, 0.05);
+      margin: 15px;
+      padding: 20px;
+      border-left: 4px solid #ff00ff;
+      max-width: 700px;
+      text-align: left;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      padding: 40px 10px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div id="intro" class="terminal">
+    <div id="terminal-text">
+      > Initializing UNBD Protocol...<br>
+      > Verifying node integrity...<br>
+      > Establishing decentralized signal...<br>
+      > <span class="blinker">█</span>
+    </div>
+  </div>
+
+  <div id="main-content" class="content">
+    <div class="section">
+      <h1>UNBD — MOVE FREE</h1>
+      <p>Borderless. Untamed. Community-fueled. No gatekeepers. No rulers. Just Signal.</p>
+      <div class="buttons">
+        <a href="https://t.me/UNBDxyz" target="_blank">Join Telegram</a>
+        <a href="https://pump.fun" target="_blank">Pump.fun</a>
+        <a href="https://dexscreener.com" target="_blank">Dexscreener</a>
+        <a href="https://unbordered.xyz" target="_blank">Visit Site</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h1>ROADMAP — Q2–Q3 2025</h1>
+      <div class="roadmap">
+        <div class="roadmap-item">
+          <strong>PHASE 1 — SIGNAL RISE (MAY 2025)</strong><br>
+          • Launch on Pump.fun<br>
+          • Strategic liquidity injections<br>
+          • Meme drop & early engagement rewards<br>
+          • Telegram mini-games: drop wallet + meme contests<br>
+          • Community-led signal expansion<br>
+          • Organic growth via X & Telegram
+        </div>
+        <div class="roadmap-item">
+          <strong>PHASE 2 — NETWORK LOCK (EARLY JUNE 2025)</strong><br>
+          • Airdrop snapshot<br>
+          • Telegram push & Twitter raid missions<br>
+          • Submission to Solana Token List (Phantom, Jupiter, Raydium)<br>
+          • Listing on GeckoTerminal, DEXTools<br>
+          • Airdrop goes live<br>
+          • Early supporter NFT reveal<br>
+          • Meme pack V2 + animated stickers<br>
+          • Stealth collabs with meme-driven projects
+        </div>
+        <div class="roadmap-item">
+          <strong>PHASE 3 — OUTBREAK (LATE JUNE – JULY 2025)</strong><br>
+          • Viral clips & street marketing<br>
+          • Listings on secondary DEXs + watchlist expansion<br>
+          • NFT mint pass + fusion mechanics<br>
+          • Merch drop (UNBD Chaos Tee v0.1)<br>
+          • First IRL community meetup prep<br>
+          • Partial migration to site V2 / UNBD explorer
+        </div>
+      </div>
+    </div>
+
+    <footer>© 2025 UNBD. No boundaries. No masters. Only movement.</footer>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('intro').classList.add('fade-out');
+      document.getElementById('main-content').style.display = 'block';
+    }, 4500);
+  </script>
+</body>
+</html>
